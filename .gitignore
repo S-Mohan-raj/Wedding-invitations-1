@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+
+# Package manager lock files (keep package-lock.json for consistency)
+# node_modules is ignored but lock files are tracked
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.log
+*.tmp

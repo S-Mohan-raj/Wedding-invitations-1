@@ -1,0 +1,13 @@
+{
+  "name": "wedding-invitations",
+  "version": "1.0.0",
+  "description": "Wedding invitation website designs with Vercel Analytics",
+  "private": true,
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "build": "echo 'Static HTML site - no build step required'"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^1.4.1"
+  }
+}
