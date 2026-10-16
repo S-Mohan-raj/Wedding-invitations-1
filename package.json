@@ -8,6 +8,7 @@
     "build": "echo 'Static HTML site - no build step required'"
   },
   "dependencies": {
-    "@vercel/analytics": "^1.4.1"
+    "@vercel/analytics": "^1.4.1",
+    "@vercel/speed-insights": "^2.0.0"
   }
 }
