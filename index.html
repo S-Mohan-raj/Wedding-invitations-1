@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f5f0e8" />
+  <meta name="description" content="Explore eighteen premium wedding invitation website designs and open the style you love." />
+  <title>The Wedding Edit — Invitation Design Gallery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Italiana&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --paper: #f5f0e8;
+      --paper-deep: #ebe3d7;
+      --ink: #292a25;
+      --muted: #77766d;
+      --line: rgba(41,42,37,.14);
+      --olive: #797e68;
+      --gold: #b69a70;
+      --serif: 'Italiana', 'Playfair Display', Georgia, serif;
+      --editorial: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', Arial, sans-serif;
+      --ease: cubic-bezier(.22, 1, .36, 1);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    button, a { font: inherit; }
+    a { color: inherit; text-decoration: none; }
+    button { color: inherit; }
+    .progress { position: fixed; z-index: 1000; top: 0; left: 0; width: 100%; height: 3px; background: transparent; }
+    .progress span { display: block; width: 0; height: 100%; background: var(--gold); }
+    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 22px clamp(20px, 5vw, 76px); border-bottom: 1px solid var(--line); }
+    .wordmark { display: flex; align-items: center; gap: 12px; font-family: var(--serif); font-size: 25px; letter-spacing: -.035em; white-space: nowrap; }
+    .wordmark-symbol { color: var(--gold); font-family: var(--editorial); font-size: 26px; }
+    .top-note { color: var(--muted); font-size: 10px; letter-spacing: .17em; text-transform: uppercase; }
+    .hero { position: relative; overflow: hidden; padding: clamp(54px, 8vw, 112px) 24px clamp(45px, 6vw, 78px); text-align: center; }
+    .hero::before, .hero::after { position: absolute; z-index: 0; color: rgba(182,154,112,.22); font-family: var(--editorial); font-size: clamp(150px, 25vw, 350px); line-height: 1; pointer-events: none; }
+    .hero::before { content: '❧'; top: 6%; left: -3%; transform: rotate(-24deg); }
+    .hero::after { content: '❧'; right: -3%; bottom: -17%; transform: rotate(154deg); }
+    .hero-content { position: relative; z-index: 1; width: min(840px, 100%); margin: 0 auto; }
+    .eyebrow { display: flex; justify-content: center; align-items: center; gap: 12px; margin: 0 0 23px; color: var(--olive); font-size: 9px; font-weight: 700; letter-spacing: .28em; text-transform: uppercase; }
+    .eyebrow::before, .eyebrow::after { content: ''; width: 25px; height: 1px; background: currentColor; }
+    h1 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(58px, 9.1vw, 112px); line-height: .92; letter-spacing: -.055em; }
+    h1 em { color: var(--olive); font-family: var(--editorial); font-size: .77em; font-weight: 400; }
+    .hero-copy { width: min(490px, 100%); margin: 26px auto 0; color: var(--muted); font-size: 13px; line-height: 1.9; }
+    .hero-meta { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 11px; margin-top: 31px; color: var(--muted); font-size: 9px; letter-spacing: .18em; text-transform: uppercase; }
+    .hero-meta .dot { color: var(--gold); }
+    .gallery-head { display: flex; justify-content: space-between; align-items: end; gap: 18px; width: min(1440px, calc(100% - 48px)); margin: 0 auto 24px; padding-top: 4px; }
+    .gallery-head h2 { margin: 0; font-family: var(--serif); font-size: clamp(30px, 4vw, 43px); font-weight: 400; letter-spacing: -.035em; }
+    .gallery-head p { margin: 7px 0 0; color: var(--muted); font-size: 11px; line-height: 1.6; }
+    .count { flex: 0 0 auto; color: var(--muted); font-family: var(--editorial); font-size: 15px; font-style: italic; }
+    .gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; width: min(1440px, calc(100% - 48px)); margin: 0 auto; padding-bottom: 80px; }
+    .design-card { min-width: 0; overflow: hidden; border: 1px solid rgba(41,42,37,.12); background: rgba(255,255,255,.38); transition: transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s ease; }
+    .design-card:hover { transform: translateY(-5px); border-color: rgba(182,154,112,.55); box-shadow: 0 22px 50px rgba(54,43,28,.10); }
+    .preview { position: relative; width: 100%; aspect-ratio: 1.57 / 1; overflow: hidden; isolation: isolate; background: #dfd8ce; border-bottom: 1px solid var(--line); }
+    .preview iframe { position: absolute; top: 0; left: 0; width: 1440px; height: 920px; border: 0; transform-origin: 0 0; transform: scale(var(--scale, .25)); pointer-events: none; user-select: none; background: var(--paper); }
+    .preview-shade { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, transparent 48%, rgba(25,24,20,.06)); pointer-events: none; }
+    .preview-label { position: absolute; z-index: 2; top: 13px; left: 13px; padding: 7px 9px; color: #fffaf3; background: rgba(36,35,30,.73); backdrop-filter: blur(8px); font-size: 8px; letter-spacing: .16em; text-transform: uppercase; }
+    .card-content { padding: 20px 21px 21px; }
+    .card-kicker { display: flex; justify-content: space-between; align-items: center; gap: 10px; color: var(--muted); font-size: 8px; letter-spacing: .18em; text-transform: uppercase; }
+    .palette { display: flex; gap: 4px; }
+    .swatch { width: 9px; height: 9px; border-radius: 50%; border: 1px solid rgba(0,0,0,.08); }
+    .card-content h3 { margin: 13px 0 7px; font-family: var(--serif); font-size: clamp(25px, 2.5vw, 32px); font-weight: 400; letter-spacing: -.03em; line-height: 1.1; }
+    .card-content p { min-height: 44px; margin: 0; color: var(--muted); font-size: 11px; line-height: 1.8; }
+    .card-bottom { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 20px; padding-top: 15px; border-top: 1px solid var(--line); }
+    .name-date { color: var(--muted); font-size: 9px; letter-spacing: .07em; }
+    .select-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 38px; padding: 0 13px; border: 1px solid var(--ink); background: transparent; color: var(--ink); cursor: pointer; font-size: 9px; letter-spacing: .13em; text-transform: uppercase; transition: background .25s, color .25s, border-color .25s; }
+    .select-btn span { font-size: 15px; line-height: 1; }
+    .select-btn:hover, .select-btn:focus-visible { background: var(--ink); color: var(--paper); outline: none; }
+    .footer { display: flex; justify-content: space-between; align-items: center; gap: 18px; padding: 24px clamp(20px, 5vw, 76px); border-top: 1px solid var(--line); color: var(--muted); font-size: 9px; letter-spacing: .12em; text-transform: uppercase; }
+    .footer-mark { color: var(--gold); font-family: var(--editorial); font-size: 19px; }
+
+    /* Full invitation viewer */
+    .viewer { position: fixed; z-index: 2000; inset: 0; display: none; flex-direction: column; background: var(--paper); }
+    .viewer.active { display: flex; }
+    .viewer-toolbar { z-index: 10; display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 56px; padding: 8px clamp(12px, 2.5vw, 32px); background: rgba(245,240,232,.96); border-bottom: 1px solid var(--line); box-shadow: 0 4px 25px rgba(32,29,23,.06); }
+    .viewer-left, .viewer-actions { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .back-btn { display: inline-flex; align-items: center; gap: 9px; border: 0; padding: 9px 10px 9px 0; background: transparent; cursor: pointer; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; white-space: nowrap; }
+    .back-btn .arrow { font-size: 18px; }
+    .viewer-separator { width: 1px; height: 23px; background: var(--line); }
+    .viewer-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-family: var(--editorial); font-size: 17px; font-style: italic; }
+    .toolbar-link { display: inline-flex; align-items: center; justify-content: center; min-height: 34px; padding: 0 11px; border: 1px solid var(--line); background: transparent; color: var(--ink); cursor: pointer; font-size: 9px; letter-spacing: .09em; text-transform: uppercase; white-space: nowrap; }
+    .toolbar-link.primary { border-color: var(--ink); background: var(--ink); color: #fffaf3; }
+    .invitation-frame { display: block; width: 100%; height: 100%; flex: 1 1 auto; border: 0; background: white; }
+    body.viewer-open { overflow: hidden; }
+    @media (max-width: 1050px) { .gallery { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 20px; } }
+    @media (max-width: 650px) {
+      .topbar { padding: 17px 18px; }
+      .wordmark { font-size: 22px; }
+      .top-note { display: none; }
+      .hero { padding: 58px 20px 48px; }
+      .hero::before { left: -16%; top: 4%; font-size: 190px; }
+      .hero::after { right: -17%; bottom: -8%; font-size: 190px; }
+      .hero-copy { font-size: 12px; }
+      .gallery-head { width: calc(100% - 34px); align-items: start; }
+      .gallery-head h2 { font-size: 31px; }
+      .gallery-head p { max-width: 280px; }
+      .gallery { grid-template-columns: 1fr; width: calc(100% - 34px); gap: 18px; padding-bottom: 50px; }
+      .card-content { padding: 18px; }
+      .card-content h3 { font-size: 30px; }
+      .card-content p { min-height: 0; }
+      .footer { flex-wrap: wrap; justify-content: center; text-align: center; }
+      .viewer-toolbar { min-height: 53px; padding: 7px 10px; }
+      .back-btn { gap: 5px; font-size: 8px; }
+      .viewer-separator { display: none; }
+      .viewer-title { font-size: 14px; max-width: 110px; }
+      .viewer-left, .viewer-actions { gap: 7px; }
+      .toolbar-link { min-height: 32px; padding: 0 8px; font-size: 8px; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+  <header class="topbar">
+    <a class="wordmark" href="#gallery" aria-label="The Wedding Edit home"><span class="wordmark-symbol">✳</span> The Wedding Edit</a>
+    <div class="top-note">One love story · Eighteen design directions</div>
+  </header>
+
+  <main id="galleryPage">
+    <section class="hero" aria-labelledby="pageTitle">
+      <div class="hero-content">
+        <p class="eyebrow">The invitation collection</p>
+        <h1 id="pageTitle">A day to remember.<br /><em>A design to feel.</em></h1>
+        <p class="hero-copy">Eighteen distinct expressions of the same love story. Explore the previews below, then choose a wedding website to experience its complete invitation.</p>
+        <div class="hero-meta"><span>Amara &amp; Elias</span><span class="dot">✦</span><span>14 February 2027</span><span class="dot">✦</span><span>Eighteen unique designs</span></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="galleryTitle">
+      <div class="gallery-head">
+        <div>
+          <h2 id="galleryTitle">Choose your aesthetic</h2>
+          <p>Each preview is a live miniature of the full invitation website.</p>
+        </div>
+        <div class="count">01 — 18</div>
+      </div>
+
+      <div class="gallery" id="designGallery">
+        <article class="design-card" data-design="original" data-title="Original Signature" data-src="designs/00-original-signature.html" data-description="The original romantic look, with cinematic photography, warm neutrals and timeless serif typography.">
+          <div class="preview" aria-label="Original Signature website preview">
+            <iframe title="Preview: Original Signature" src="designs/00-original-signature.html" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+            <div class="preview-shade"></div><span class="preview-label">Original collection</span>
+          </div>
+          <div class="card-content"><div class="card-kicker"><span>01 / Signature</span><span class="palette"><i class="swatch" style="background:#f5eee4"></i><i class="swatch" style="background:#8b735c"></i><i class="swatch" style="background:#32382f"></i></span></div><h3>Original Signature</h3><p>The original polished wedding design: romantic, cinematic, and quietly luxurious.</p><div class="card-bottom"><span class="name-date">AMARA &amp; ELIAS · 2027</span><button class="select-btn" type="button" data-open="original">Explore design <span>↗</span></button></div></div>
+        </article>
+
+        <article class="design-card" data-design="botanical" data-title="Botanical Garden" data-src="designs/01-botanical-garden.html" data-description="Sage tones, organic details, airy layouts and a soft garden-inspired mood.">
+          <div class="preview" aria-label="Botanical Garden website preview">
+            <iframe title="Preview: Botanical Garden" src="designs/01-botanical-garden.html" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+            <div class="preview-shade"></div><span class="preview-label">Natural · romantic</span>
+          </div>
+          <div class="card-content"><div class="card-kicker"><span>02 / Botanical</span><span class="palette"><i class="swatch" style="background:#dfe3d8"></i><i class="swatch" style="background:#f7f3ed"></i><i class="swatch" style="background:#8f5549"></i></span></div><h3>Botanical Garden</h3><p>Sage green, warm ivory, delicate borders and an effortless garden atmosphere.</p><div class="card-bottom"><span class="name-date">AMARA &amp; ELIAS · 2027</span><button class="select-btn" type="button" data-open="botanical">Explore design <span>↗</span></button></div></div>
+        </article>
+
+        <article class="design-card" data-design="noir" data-title="Cinematic Noir" data-src="designs/02-cinematic-noir.html" data-description="Moody black, champagne gold, dramatic photography and high-contrast elegance.">
+          <div class="preview" aria-label="Cinematic Noir website preview">
+            <iframe title="Preview: Cinematic Noir" src="designs/02-cinematic-noir.html" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+            <div class="preview-shade"></div><span class="preview-label">Dramatic · luxury</span>
+          </div>
+          <div class="card-content"><div class="card-kicker"><span>03 / Cinematic</span><span class="palette"><i class="swatch" style="background:#171715"></i><i class="swatch" style="background:#b99b66"></i><i class="swatch" style="background:#e8dfd0"></i></span></div><h3>Cinematic Noir</h3><p>Midnight black, champagne gold, dramatic photography and a glamorous evening feel.</p><div class="card-bottom"><span class="name-date">AMARA &amp; ELIAS · 2027</span><button class="select-btn" type="button" data-open="noir">Explore design <span>↗</span></button></div></div>
+        </article>
+
+        <article class="design-card" data-design="editorial" data-title="Modern Editorial" data-src="designs/03-modern-editorial.html" data-description="Magazine-inspired composition, oversized typography and clean contemporary details.">
+          <div class="preview" aria-label="Modern Editorial website preview">
+            <iframe title="Preview: Modern Editorial" src="designs/03-modern-editorial.html" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+            <div class="preview-shade"></div><span class="preview-label">Modern · minimal</span>
+          </div>
+          <div class="card-content"><div class="card-kicker"><span>04 / Editorial</span><span class="palette"><i class="swatch" style="background:#fbf9f4"></i><i class="swatch" style="background:#3554b6"></i><i class="swatch" style="background:#242625"></i></span></div><h3>Modern Editorial</h3><p>Gallery-like compositions, big names, crisp geometry and a modern magazine aesthetic.</p><div class="card-bottom"><span class="name-date">AMARA &amp; ELIAS · 2027</span><button class="select-btn" type="button" data-open="editorial">Explore design <span>↗</span></button></div></div>
+        </article>
+
+        <article class="design-card" data-design="rose" data-title="Rose Romance" data-src="designs/04-rose-watercolor.html" data-description="Blush pink, graceful curves, floral softness and gentle romantic details.">
+          <div class="preview" aria-label="Rose Romance website preview">
+            <iframe title="Preview: Rose Romance" src="designs/04-rose-watercolor.html" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+            <div class="preview-shade"></div><span class="preview-label">Soft · romantic</span>
+          </div>
+          <div class="card-content"><div class="card-kicker"><span>05 / Rose</span><span class="palette"><i class="swatch" style="background:#f4e0df"></i><i class="swatch" style="background:#bc7e83"></i><i class="swatch" style="background:#fff8f2"></i></span></div><h3>Rose Romance</h3><p>Blush and dusty rose tones, flowing curves and a soft, floral-inspired mood.</p><div class="card-bottom"><span class="name-date">AMARA &amp; ELIAS · 2027</span><button class="select-btn" type="button" data-open="rose">Explore design <span>↗</span></button></div></div>
+        </article>
+
+        <article class="design-card" data-design="deco" data-title="Art Deco Gold" data-src="designs/05-art-deco-gold.html" data-description="Emerald, antique gold and geometric detailing inspired by grand vintage celebrations.">
+          <div class="preview" aria-label="Art Deco Gold website preview">
+            <iframe title="Preview: Art Deco Gold" src="designs/05-art-deco-gold.html" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+            <div class="preview-shade"></div><span class="preview-label">Heritage · grand</span>
+          </div>
+          <div class="card-content"><div class="card-kicker"><span>06 / Art Deco</span><span class="palette"><i class="swatch" style="background:#173e35"></i><i class="swatch" style="background:#c4a15e"></i><i class="swatch" style="background:#f2eadb"></i></span></div><h3>Art Deco Gold</h3><p>Deep emerald, antique gold, geometric framing and old-world sophistication.</p><div class="card-bottom"><span class="name-date">AMARA &amp; ELIAS · 2027</span><button class="select-btn" type="button" data-open="deco">Explore design <span>↗</span></button></div></div>
+        </article>
+
+        <article class="design-card" data-design="coastal-blue" data-title="Coastal Blue" data-src="designs/06-coastal-blue.html" data-description="Sea-glass blue, driftwood gold, airy typography and a split-screen coastal hero.">
+          <div class="preview" aria-label="Coastal Blue website preview">
+            <iframe title="Preview: Coastal Blue" src="designs/06-coastal-blue.html" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+            <div class="preview-shade"></div><span class="preview-label">Coastal · refined</span>
+          </div>
+          <div class="card-content"><div class="card-kicker"><span>07 / Coastal</span><span class="palette"><i class="swatch" style="background:#e6eff1"></i><i class="swatch" style="background:#347b91"></i><i class="swatch" style="background:#c8a36e"></i></span></div><h3>Coastal Blue</h3><p>Sea-glass blue, driftwood gold, airy typography and a split-screen coastal hero.</p><div class="card-bottom"><span class="name-date">AMARA &amp; ELIAS · 2027</span><button class="select-btn" type="button" data-open="coastal-blue">Explore design <span>↗</span></button></div></div>
+        </article>
+
+        <article class="design-card" data-design="tuscan-sunset" data-title="Tuscan Sunset" data-src="designs/07-tuscan-sunset.html" data-description="Terracotta, sun-washed paper, golden-hour photography and arch-shaped moments.">
+          <div class="preview" aria-label="Tuscan Sunset website preview">
+            <iframe title="Preview: Tuscan Sunset" src="designs/07-tuscan-sunset.html" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+            <div class="preview-shade"></div><span class="preview-label">Earthy · warm</span>
+          </div>
+          <div class="card-content"><div class="card-kicker"><span>08 / Tuscan</span><span class="palette"><i class="swatch" style="background:#f1dfc9"></i><i class="swatch" style="background:#b65032"></i><i class="swatch" style="background:#ce9e49"></i></span></div><h3>Tuscan Sunset</h3><p>Terracotta, sun-washed paper, golden-hour photography and arch-shaped moments.</p><div class="card-bottom"><span class="name-date">AMARA &amp; ELIAS · 2027</span><button class="select-btn" type="button" data-open="tuscan-sunset">Explore design <span>↗</span></button></div></div>
+        </article>
+
+        <article class="design-card" data-design="lavender-dream" data-title="Lavender Dream" data-src="designs/08-lavender-dream.html" data-description="Lilac tones, graceful arches, gentle curves and a romantic handwritten accent.">
+          <div class="preview" aria-label="Lavender Dream website preview">
+            <iframe title="Preview: Lavender Dream" src="designs/08-lavender-dream.html" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+            <div class="preview-shade"></div><span class="preview-label">Dreamy · soft</span>
+          </div>
+          <div class="card-content"><div class="card-kicker"><span>09 / Lavender</span><span class="palette"><i class="swatch" style="background:#eee7fa"></i><i class="swatch" style="background:#9b78c4"></i><i class="swatch" style="background:#d6a7c8"></i></span></div><h3>Lavender Dream</h3><p>Lilac tones, graceful arches, gentle curves and a romantic handwritten accent.</p><div class="card-bottom"><span class="name-date">AMARA &amp; ELIAS · 2027</span><button class="select-btn" type="button" data-open="lavender-dream">Explore design <span>↗</span></button></div></div>
+        </article>
+
+        <article class="design-card" data-design="monochrome-muse" data-title="Monochrome Muse" data-src="designs/09-monochrome-muse.html" data-description="High-contrast black and ivory, bold typography and precise editorial structure.">
+          <div class="preview" aria-label="Monochrome Muse website preview">
+            <iframe title="Preview: Monochrome Muse" src="designs/09-monochrome-muse.html" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+            <div class="preview-shade"></div><span class="preview-label">Modern · graphic</span>
+          </div>
+          <div class="card-content"><div class="card-kicker"><span>10 / Monochrome</span><span class="palette"><i class="swatch" style="background:#ecece7"></i><i class="swatch" style="background:#151515"></i><i class="swatch" style="background:#77776f"></i></span></div><h3>Monochrome Muse</h3><p>High-contrast black and ivory, bold typography and precise editorial structure.</p><div class="card-bottom"><span class="name-date">AMARA &amp; ELIAS · 2027</span><button class="select-btn" type="button" data-open="monochrome-muse">Explore design <span>↗</span></button></div></div>
+        </article>
+
+        <article class="design-card" data-design="burgundy-royale" data-title="Burgundy Royale" data-src="designs/10-burgundy-royale.html" data-description="Deep garnet, antique gold, formal typography and heirloom-inspired framing.">
+          <div class="preview" aria-label="Burgundy Royale website preview">
+            <iframe title="Preview: Burgundy Royale" src="designs/10-burgundy-royale.html" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+            <div class="preview-shade"></div><span class="preview-label">Regal · timeless</span>
+          </div>
+          <div class="card-content"><div class="card-kicker"><span>11 / Burgundy</span><span class="palette"><i class="swatch" style="background:#eee0df"></i><i class="swatch" style="background:#812c45"></i><i class="swatch" style="background:#c6a36c"></i></span></div><h3>Burgundy Royale</h3><p>Deep garnet, antique gold, formal typography and heirloom-inspired framing.</p><div class="card-bottom"><span class="name-date">AMARA &amp; ELIAS · 2027</span><button class="select-btn" type="button" data-open="burgundy-royale">Explore design <span>↗</span></button></div></div>
+        </article>
+
+        <article class="design-card" data-design="tropical-reverie" data-title="Tropical Reverie" data-src="designs/11-tropical-reverie.html" data-description="Lush emerald, coral details, asymmetric forms and joyful tropical energy.">
+          <div class="preview" aria-label="Tropical Reverie website preview">
+            <iframe title="Preview: Tropical Reverie" src="designs/11-tropical-reverie.html" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+            <div class="preview-shade"></div><span class="preview-label">Vibrant · botanical</span>
+          </div>
+          <div class="card-content"><div class="card-kicker"><span>12 / Tropical</span><span class="palette"><i class="swatch" style="background:#e4eee0"></i><i class="swatch" style="background:#e36f57"></i><i class="swatch" style="background:#d3a649"></i></span></div><h3>Tropical Reverie</h3><p>Lush emerald, coral details, asymmetric forms and joyful tropical energy.</p><div class="card-bottom"><span class="name-date">AMARA &amp; ELIAS · 2027</span><button class="select-btn" type="button" data-open="tropical-reverie">Explore design <span>↗</span></button></div></div>
+        </article>
+        <article class="design-card" data-design="celestial-afterglow" data-title="Celestial Afterglow" data-src="designs/12-celestial-afterglow.html" data-description="Midnight blue, lunar lilac, silver accents and a starlit romantic atmosphere.">
+          <div class="preview" aria-label="Celestial Afterglow website preview">
+            <iframe title="Preview: Celestial Afterglow" src="designs/12-celestial-afterglow.html" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+            <div class="preview-shade"></div><span class="preview-label">Dreamy · celestial</span>
+          </div>
+          <div class="card-content"><div class="card-kicker"><span>13 / Celestial</span><span class="palette"><i class="swatch" style="background:#202039"></i><i class="swatch" style="background:#8270aa"></i><i class="swatch" style="background:#c3a15c"></i></span></div><h3>Celestial Afterglow</h3><p>Midnight blue, lunar lilac, silver accents and a starlit romantic atmosphere.</p><div class="card-bottom"><span class="name-date">AMARA &amp; ELIAS · 2027</span><button class="select-btn" type="button" data-open="celestial-afterglow">Explore design <span>↗</span></button></div></div>
+        </article>
+        <article class="design-card" data-design="champagne-minimal" data-title="Champagne Minimal" data-src="designs/13-champagne-minimal.html" data-description="Quiet ivory, champagne accents, fine rules and precise minimalist typography.">
+          <div class="preview" aria-label="Champagne Minimal website preview">
+            <iframe title="Preview: Champagne Minimal" src="designs/13-champagne-minimal.html" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+            <div class="preview-shade"></div><span class="preview-label">Quiet · refined</span>
+          </div>
+          <div class="card-content"><div class="card-kicker"><span>14 / Minimal</span><span class="palette"><i class="swatch" style="background:#faf8f3"></i><i class="swatch" style="background:#9a815d"></i><i class="swatch" style="background:#c6b18e"></i></span></div><h3>Champagne Minimal</h3><p>Quiet ivory, champagne accents, fine rules and precise minimalist typography.</p><div class="card-bottom"><span class="name-date">AMARA &amp; ELIAS · 2027</span><button class="select-btn" type="button" data-open="champagne-minimal">Explore design <span>↗</span></button></div></div>
+        </article>
+        <article class="design-card" data-design="sakura-reverie" data-title="Sakura Reverie" data-src="designs/14-sakura-reverie.html" data-description="Cherry-blossom pink, petal curves, porcelain cream and a soft spring mood.">
+          <div class="preview" aria-label="Sakura Reverie website preview">
+            <iframe title="Preview: Sakura Reverie" src="designs/14-sakura-reverie.html" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+            <div class="preview-shade"></div><span class="preview-label">Soft · poetic</span>
+          </div>
+          <div class="card-content"><div class="card-kicker"><span>15 / Sakura</span><span class="palette"><i class="swatch" style="background:#fff7f4"></i><i class="swatch" style="background:#b86f87"></i><i class="swatch" style="background:#dba3b6"></i></span></div><h3>Sakura Reverie</h3><p>Cherry-blossom pink, petal curves, porcelain cream and a soft spring mood.</p><div class="card-bottom"><span class="name-date">AMARA &amp; ELIAS · 2027</span><button class="select-btn" type="button" data-open="sakura-reverie">Explore design <span>↗</span></button></div></div>
+        </article>
+        <article class="design-card" data-design="vintage-film" data-title="Vintage Film" data-src="designs/15-vintage-film.html" data-description="Sepia photography, archival borders and warm film-inspired nostalgia.">
+          <div class="preview" aria-label="Vintage Film website preview">
+            <iframe title="Preview: Vintage Film" src="designs/15-vintage-film.html" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+            <div class="preview-shade"></div><span class="preview-label">Nostalgic · analog</span>
+          </div>
+          <div class="card-content"><div class="card-kicker"><span>16 / Vintage</span><span class="palette"><i class="swatch" style="background:#f4ead6"></i><i class="swatch" style="background:#a65f3f"></i><i class="swatch" style="background:#c29461"></i></span></div><h3>Vintage Film</h3><p>Sepia photography, archival borders and warm film-inspired nostalgia.</p><div class="card-bottom"><span class="name-date">AMARA &amp; ELIAS · 2027</span><button class="select-btn" type="button" data-open="vintage-film">Explore design <span>↗</span></button></div></div>
+        </article>
+        <article class="design-card" data-design="sapphire-palace" data-title="Sapphire Palace" data-src="designs/16-sapphire-palace.html" data-description="Royal sapphire, peacock teal, polished gold and grand ornamental framing.">
+          <div class="preview" aria-label="Sapphire Palace website preview">
+            <iframe title="Preview: Sapphire Palace" src="designs/16-sapphire-palace.html" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+            <div class="preview-shade"></div><span class="preview-label">Regal · jewel-toned</span>
+          </div>
+          <div class="card-content"><div class="card-kicker"><span>17 / Sapphire</span><span class="palette"><i class="swatch" style="background:#eef3f8"></i><i class="swatch" style="background:#1c6381"></i><i class="swatch" style="background:#c3a15c"></i></span></div><h3>Sapphire Palace</h3><p>Royal sapphire, peacock teal, polished gold and grand ornamental framing.</p><div class="card-bottom"><span class="name-date">AMARA &amp; ELIAS · 2027</span><button class="select-btn" type="button" data-open="sapphire-palace">Explore design <span>↗</span></button></div></div>
+        </article>
+        <article class="design-card" data-design="desert-bloom" data-title="Desert Bloom" data-src="designs/17-desert-bloom.html" data-description="Sun-baked clay, ochre, sand and free-flowing shapes inspired by a desert celebration.">
+          <div class="preview" aria-label="Desert Bloom website preview">
+            <iframe title="Preview: Desert Bloom" src="designs/17-desert-bloom.html" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+            <div class="preview-shade"></div><span class="preview-label">Earthy · sculptural</span>
+          </div>
+          <div class="card-content"><div class="card-kicker"><span>18 / Desert</span><span class="palette"><i class="swatch" style="background:#f6ead7"></i><i class="swatch" style="background:#b8613f"></i><i class="swatch" style="background:#c89b54"></i></span></div><h3>Desert Bloom</h3><p>Sun-baked clay, ochre, sand and free-flowing shapes inspired by a desert celebration.</p><div class="card-bottom"><span class="name-date">AMARA &amp; ELIAS · 2027</span><button class="select-btn" type="button" data-open="desert-bloom">Explore design <span>↗</span></button></div></div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><span>Made for a love worth celebrating</span><span class="footer-mark">✳</span><span>The Wedding Edit · Eighteen expressions, one story</span></footer>
+
+  <section class="viewer" id="viewer" aria-label="Selected wedding invitation" aria-hidden="true">
+    <div class="viewer-toolbar">
+      <div class="viewer-left"><button class="back-btn" id="backToGallery" type="button"><span class="arrow">←</span> All designs</button><span class="viewer-separator"></span><span class="viewer-title" id="viewerTitle">Wedding invitation</span></div>
+      <div class="viewer-actions"><a class="toolbar-link" id="openStandalone" href="#" target="_blank" rel="noopener">Open full page ↗</a><button class="toolbar-link primary" id="closeViewer" type="button">Back to gallery</button></div>
+    </div>
+    <iframe class="invitation-frame" id="invitationFrame" title="Selected wedding invitation website" src="about:blank"></iframe>
+  </section>
+
+  <script>
+    (() => {
+      const gallery = document.getElementById('designGallery');
+      const viewer = document.getElementById('viewer');
+      const galleryPage = document.getElementById('galleryPage');
+      const frame = document.getElementById('invitationFrame');
+      const title = document.getElementById('viewerTitle');
+      const openStandalone = document.getElementById('openStandalone');
+      const progressBar = document.getElementById('progressBar');
+      const cards = [...gallery.querySelectorAll('.design-card')];
+      const designs = new Map(cards.map(card => [card.dataset.design, card]));
+      let activeDesign = null;
+
+      function resizePreviews() {
+        document.querySelectorAll('.preview').forEach(stage => {
+          const scale = stage.clientWidth / 1440;
+          stage.style.setProperty('--scale', String(scale));
+        });
+      }
+      const observer = new ResizeObserver(resizePreviews);
+      document.querySelectorAll('.preview').forEach(stage => observer.observe(stage));
+      window.addEventListener('load', resizePreviews, { once: true });
+      window.addEventListener('resize', resizePreviews, { passive: true });
+
+      function renderRoute() {
+        const match = location.hash.match(/^#view-([a-z-]+)$/);
+        if (!match) { showGallery(false); return; }
+        const card = designs.get(match[1]);
+        if (!card) { showGallery(false); return; }
+        showDesign(card, false);
+      }
+
+      function showDesign(card, updateHash = true) {
+        const id = card.dataset.design;
+        const src = card.dataset.src;
+        activeDesign = id;
+        title.textContent = card.dataset.title;
+        openStandalone.href = src;
+        viewer.classList.add('active');
+        viewer.setAttribute('aria-hidden', 'false');
+        galleryPage.setAttribute('aria-hidden', 'true');
+        document.body.classList.add('viewer-open');
+        if (frame.getAttribute('src') !== src) frame.setAttribute('src', src);
+        if (updateHash && location.hash !== `#view-${id}`) location.hash = `view-${id}`;
+        document.getElementById('closeViewer').focus({ preventScroll: true });
+      }
+
+      function showGallery(updateHash = true) {
+        viewer.classList.remove('active');
+        viewer.setAttribute('aria-hidden', 'true');
+        galleryPage.removeAttribute('aria-hidden');
+        document.body.classList.remove('viewer-open');
+        frame.setAttribute('src', 'about:blank');
+        activeDesign = null;
+        if (updateHash && location.hash.startsWith('#view-')) history.replaceState(null, '', location.pathname + location.search + '#gallery');
+      }
+
+      gallery.addEventListener('click', event => {
+        const button = event.target.closest('[data-open]');
+        if (!button) return;
+        const card = designs.get(button.dataset.open);
+        if (card) showDesign(card, true);
+      });
+      document.getElementById('backToGallery').addEventListener('click', () => {
+        if (location.hash.startsWith('#view-')) location.hash = 'gallery';
+        else showGallery(false);
+      });
+      document.getElementById('closeViewer').addEventListener('click', () => {
+        if (location.hash.startsWith('#view-')) location.hash = 'gallery';
+        else showGallery(false);
+      });
+      window.addEventListener('hashchange', renderRoute);
+      window.addEventListener('popstate', renderRoute);
+      window.addEventListener('scroll', () => {
+        const total = document.documentElement.scrollHeight - window.innerHeight;
+        const percent = total > 0 ? (window.scrollY / total) * 100 : 0;
+        progressBar.style.width = `${Math.min(100, Math.max(0, percent))}%`;
+      }, { passive: true });
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && viewer.classList.contains('active')) {
+          if (location.hash.startsWith('#view-')) location.hash = 'gallery';
+          else showGallery(false);
+        }
+      });
+      renderRoute();
+    })();
+  </script>
+</body>
+</html>
